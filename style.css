@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1, h2 {
+    color: #0056b3;
+}
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Estilos para a primeira função */
+.paragrafo-estilo-original {
+    color: #333;
+    font-size: 16px;
+    transition: all 0.5s ease; /* Suaviza a transição do estilo */
+}
+.paragrafo-estilo-alterado {
+    color: #e44d26; /* Uma cor diferente */
+    font-size: 20px; /* Um tamanho maior */
+    font-weight: bold;
+    background-color: #ffe0b2; /* Um fundo leve */
+    padding: 5px;
+    border-radius: 4px;
+}
