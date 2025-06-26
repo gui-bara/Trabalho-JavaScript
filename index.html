@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções JavaScript Interativas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+    
+        .paragrafo-estilo-original {
+            color: #333;
+            font-size: 16px;
+            transition: all 0.5s ease; 
+        }
+        .paragrafo-estilo-alterado {
+            color: #e44d26; 
+            font-size: 20px; 
+            font-weight: bold;
+            background-color: #ffe0b2; 
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exemplos de Funções JavaScript</h1>
+
+    <div class="container">
+        <h2>1. Alterar o Estilo de um Parágrafo</h2>
+        <p id="meuParagrafo" class="paragrafo-estilo-original">
+            Sabia que laranja é a minha cor original?
+        </p>
+        <button onclick="alterarEstiloParagrafo()">Mudar Estilo</button>
+    </div>
+
+    <div class="container">
+        <h2>2. Mostrar a Data e Hora Atualizada</h2>
+        <p id="dataHoraAtual"></p>
+        <button onclick="mostrarDataHora()">Mostrar Data e Hora</button>
+    </div>
+
+    <div class="container">
+        <h2>3. Trocar Entre Duas Imagens</h2>
+        <img id="minhaImagem" src="https://via.placeholder.com/400x200/0000FF/FFFFFF?text=Imagem+1" alt="Imagem 1">
+        <button onclick="trocarImagem()">Trocar Imagem</button>
+    </div>
+
+    <script>
+        
+        function alterarEstiloParagrafo() {
+            const paragrafo = document.getElementById('meuParagrafo');
+            if (paragrafo.classList.contains('paragrafo-estilo-original')) {
+                paragrafo.classList.remove('paragrafo-estilo-original');
+                paragrafo.classList.add('paragrafo-estilo-alterado');
+            } else {
+                paragrafo.classList.remove('paragrafo-estilo-alterado');
+                paragrafo.classList.add('paragrafo-estilo-original');
+            }
+        }
+
+        
+        function mostrarDataHora() {
+            const paragrafoDataHora = document.getElementById('dataHoraAtual');
+            const dataAtual = new Date();
+            paragrafoDataHora.textContent = "Data e Hora Atuais: " + dataAtual.toLocaleString('pt-BR');
+        }
+
+        
+        let imagemAtual = 1;
+        function trocarImagem() {
+            const imagem = document.getElementById('minhaImagem');
+            if (imagemAtual === 1) {
+                imagem.src = "https://thefans.com.br/wp-content/uploads/2025/06/kristaps-porzingis-atanta-hawks-800x500.webp"; // Imagem 2 (vermelha)
+                imagem.alt = "Imagem 2";
+                imagemAtual = 2;
+            } else {
+                imagem.src = "https://www.sportsnet.ca/wp-content/uploads/2025/06/KP-768x432.jpg"; // Imagem 1 (azul)
+                imagem.alt = "Imagem 1";
+                imagemAtual = 1;
+            }
+        }
+    </script>
+
+</body>
+</html>
